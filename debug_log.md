@@ -32,4 +32,8 @@ After solving these issues, the app works as intended.
 
 ## Exercise 3
 
-[[Your answer goes here!]]
+The first error which arises is an Index Out of Bounds error, on line 37 `arr[k] = right_side[i]` To solve this error, I used back tracing to understand the portions of code leading up to line 37. In this manner, I found that the left side of the array is referred to by index `i` while the right side is referred to by index `j` To solve this error, I simply replaced `right_side[i]` with `right_side[j]`
+
+The next error that arises is a `TypeError: list indices must be integers or slices, not float` on line 51 `if arr[mid] < elem:` To solve this, I also used back tracing. I found that the `mid` variable is being set on line 48 `mid = (high + low) / 2` and is using floating point division, instead of integer division. To solve this I simply changed / to //
+
+
