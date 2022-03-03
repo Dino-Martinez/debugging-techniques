@@ -11,15 +11,14 @@ def merge_sort(arr):
     # Dividing the array elements into 2 halves
     left_side = arr[:mid]
     right_side = arr[mid:]
-
+    
     # Sorting the first and second half
     merge_sort(left_side)
     merge_sort(right_side)
-
     i = j = k = 0
-
     # Copy data to temp arrays L[] and R[]
     while i < len(left_side) and j < len(right_side):
+        print(left_side, right_side, i, j, k)
         if left_side[i] > right_side[j]:
             arr[k] = left_side[i]
             i += 1
@@ -27,6 +26,8 @@ def merge_sort(arr):
             arr[k] = right_side[j]
             j += 1
         k += 1
+    
+    print(arr)
 
     # Checking if any element was left
     while i < len(left_side):
@@ -34,7 +35,7 @@ def merge_sort(arr):
         i += 1
 
     while j < len(right_side):
-        arr[k] = right_side[i]
+        arr[k] = right_side[j]
         j += 1
 
 def binary_search(arr, elem):
@@ -45,7 +46,7 @@ def binary_search(arr, elem):
   
     while low < high: 
   
-        mid = (high + low) / 2
+        mid = (high + low) // 2
   
         # Check if elem is present at mid 
         if arr[mid] < elem: 
