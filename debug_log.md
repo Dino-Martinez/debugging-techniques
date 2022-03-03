@@ -28,7 +28,7 @@ The app is supposed to be displaying the weather in my city, but instead I am re
 
 Next, I noticed that there was a new KeyError for the key 'temperature.' To fix this I referred back to the open weather maps API and noticed that the correct format for their JSON responses has the 'temp' key, not 'temperature.' This was an easy fix on line 54.
 
-The next error which occurred was an 'invalid format string' error, occuring inside of the results.html template where we call `strftime()` 
+After solving these issues, the app works as intended.
 
 ## Exercise 3
 
